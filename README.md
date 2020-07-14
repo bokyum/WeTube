@@ -80,3 +80,10 @@ npm install helmet
 ### cookie parser
 
 ### body parser
+
+
+
+---------------------
+### Model => data
+### View => how does the data look
+### Control => function that looks for the data
