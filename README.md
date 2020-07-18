@@ -87,3 +87,19 @@ npm install helmet
 ### Model => data
 ### View => how does the data look
 ### Control => function that looks for the data
+
+
+# Pages 
+
+---------
+
+    - [ ] Home
+    - [ ] Join
+    - [ ] Login
+    - [ ] Search
+    - [ ] User Detail
+    - [ ] Edit Profile
+    - [ ] Change Password
+    - [ ] Upload
+    - [ ] Video Detail
+    - [ ] Edit Video
