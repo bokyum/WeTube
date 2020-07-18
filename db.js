@@ -4,7 +4,7 @@ export const videos = [
         title: "Awesome Videos",
         description: "Just for check",
         view: 24,
-        videoFile: "http://www.bigbuckbunny.org/",
+        videoFile: "https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4",
         creater: {
             id: 12313,
             name: "mandoo",
@@ -16,7 +16,7 @@ export const videos = [
         title: "Super Videos",
         description: "Just for check2",
         view: 48,
-        videoFile: "http://www.bigbuckbunny.org/",
+        videoFile: "https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4",
         creater: {
             id: 12313,
             name: "mandoo",
@@ -28,7 +28,7 @@ export const videos = [
         title: "Funny Videos",
         description: "Just for check3",
         view: 72,
-        videoFile: "http://www.bigbuckbunny.org/",
+        videoFile: "https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4",
         creater: {
             id: 12313,
             name: "mandoo",
