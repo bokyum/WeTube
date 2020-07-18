@@ -94,11 +94,11 @@ npm install helmet
 ---------
 
     - [ ] Home
-    - [ ] Join
-    - [ ] Login
-    - [ ] Search
+    - [x] Join
+    - [x] Login
+    - [x] Search
     - [ ] User Detail
-    - [ ] Edit Profile
+    - [x] Edit Profile
     - [ ] Change Password
     - [ ] Upload
     - [ ] Video Detail
