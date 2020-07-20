@@ -1,9 +1,14 @@
 import mongoos from "mongoose";
+import dotenv from "dotenv";
 
-mongoos.connect("mongodb://localhost:/27017",
+dotenv.config();
+
+mongoos.connect(
+    process.env.MONGO_URL,
     {
         useNewUrlParser: true,
-        useFindAndModify: false
+        useFindAndModify: false,
+        useUnifiedTopology: true
     }
 );
 

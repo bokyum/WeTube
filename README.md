@@ -103,3 +103,14 @@ npm install helmet
     - [ ] Upload
     - [ ] Video Detail
     - [ ] Edit Video
+
+
+# mongodb
+
+-----
+
+ - brew services start mongodb-community
+ - brew services list
+
+ - mongodb 장점: documents 수를 줄여줌
+ - 

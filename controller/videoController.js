@@ -1,8 +1,15 @@
 import routes from "../routes";
+import Video from "../models/Video";
 // default export 시에는 import { routes } from "../routes";로 입력시 오류가 발생함
 
-export const home = (req, res) => {
-    res.render("home", {pageTitle: "Home", videos});
+export const home = async (req, res) => {
+    try {
+        const videos = await Video.find({});
+        res.render("home", {pageTitle: "Home", videos});
+    } catch (error) {
+        console.log(error)
+        req.render("home", {pageTitle: "Home", videos: []})
+    }
 };
 // const searchingBy = req.query.term
 export const search = (req, res) => {
@@ -16,12 +23,18 @@ export const search = (req, res) => {
 //export const videos = (req, res) => res.render("videos");
 export const getUpload = (req, res) => res.render("upload", {pageTitle: "Upload"});
 
-export const postUpload = (req, res) => {
+export const postUpload = async (req, res) => {
     const {
-        body: {file, title, description}
+        body: {title, description},
+        file: {path}
     } = req;
     // To Do: Upload ans Save 
-    res.redirect(routes.videoDetail(31231));
+    const newVideo = await Video.create({
+        fileUrl: path,
+        title,
+        description
+    });
+    res.redirect(routes.videoDetail(newVideo.id));
 };
 
 
