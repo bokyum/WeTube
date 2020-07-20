@@ -1,4 +1,3 @@
-import { videos } from "../db";
 import routes from "../routes";
 // default export 시에는 import { routes } from "../routes";로 입력시 오류가 발생함
 
