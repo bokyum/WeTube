@@ -1,10 +1,10 @@
 extends ./layouts/main 
 
 block content
-    .form-container
-        form(action=`/videos${routes.upload}`, method="post")
-            label(for="file") Video File
-            input(type="file", id="file", name="file", required = True)
-            inpurt(type="text", placeholder="Title", name = "title", required = True)
-            textaread(name="description", placeholder="Description", required = True)
-            input(type="submit", value = "Upload Video")
+    .video__player
+        video(src=`/${video.fileUrl}`)
+    .video__info
+        a(href=routes.editVideo) Edit Video
+        h5.video__title=video.title
+        span.video__views=video.views
+        p.video__description=video.description

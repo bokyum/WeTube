@@ -13,7 +13,7 @@ const EDIT_PROFILE = "/edit-profile";
 const CHANGE_PASSWORD = "/change-password";
 
 // Videos
-
+// 만약 constollers에서 어떤 data를 가지고 있다는 것을 표현하고 싶다면 : 과 이름을 넣으면 됌
 const VIDEOS = "/videos";
 const UPLOAD = "/upload";
 const VIDEO_DETAIL = "/:id";

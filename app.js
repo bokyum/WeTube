@@ -13,6 +13,9 @@ import { localsMiddleware } from "./middlewares";
 const app = express();
 app.use(helmet());
 app.set('view engine', "pug")
+app.use("/uploads", express.static("uploads"))
+//주어진 directory에서 file을 전달해주는 middleware function
+//이 경우엔 어떤 종류의 controller나 view 같은 것을 확인하지 않고 file만 확인
 
 app.use(cookieParser());
 app.use(bodyParser.json());

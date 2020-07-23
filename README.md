@@ -113,4 +113,7 @@ npm install helmet
  - brew services list
 
  - mongodb 장점: documents 수를 줄여줌
- - 
+ 
+ - user we-tube
+ - show collections
+ - db.videos.remove({})
