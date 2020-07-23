@@ -54,5 +54,32 @@ export const videoDetail = async (req, res) => {
 };
 
 
-export const editVideo = (req, res) => res.render("editVideo", {pageTitle: "Edit Video"});
+export const getEditVideo = async (req, res) => {
+    const {
+        params: {id}
+    } = req;
+    try {
+        const video = await Video.findById(id);
+        res.render("editVideo", {pageTitle: `Edit ${video.title}`, video})
+    } catch (error) { // 이 부분은 middlewares를 통하여 잘못된 id를 처리하는 방법도 있음 
+        console.log(error)
+        res.redirect(routes.home);
+    }
+};
+export const postEditVideo = async (req, res) => {
+    const {
+        params: {id},
+        body: {title, description}
+    } = req;
+    try {
+        // 변수에 저장하지 않는 이유
+        // 정보를 가져올 필요 없이 업데이트만 하면 됨
+        await Video.findOneAndUpdate({id}, {title, description});
+        res.redirect(routes.videoDetail(id));
+    } catch (error) {
+        res.redirect(routes.home);
+    }
+};
+
+
 export const deleteVideo = (req, res) => res.render("deleteVideo", {pageTitle: "Delete Video"});
