@@ -12,8 +12,8 @@ import { localsMiddleware } from "./middlewares";
 // require node module을 어딘가에서 가져옴
 const app = express();
 app.use(helmet());
-app.set('view engine', "pug")
-app.use("/uploads", express.static("uploads"))
+app.set("view engine", "pug");
+app.use("/uploads", express.static("uploads"));
 //주어진 directory에서 file을 전달해주는 middleware function
 //이 경우엔 어떤 종류의 controller나 view 같은 것을 확인하지 않고 file만 확인
 
@@ -22,14 +22,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 
-app.use(localsMiddleware)
+app.use(localsMiddleware);
 
 app.use(routes.home, globalRouter);
 app.use(routes.videos, videoRouter);
 app.use(routes.users, userRouter);
 //app.use(routes.home, videoRouter);
-
-
 
 export default app;
 

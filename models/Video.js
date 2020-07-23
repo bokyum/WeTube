@@ -2,29 +2,29 @@ import mongoose from "mongoose";
 
 // Schema = model definition
 const VideoSchema = new mongoose.Schema({
-    fileUrl:{
-        type: String,
-        required: "File Url is required"
-    },
-    title:{
-        type: String,
-        required: "Title is required"
-    },
-    description: String,
-    views: {
-        type: Number,
-        default: 0
-    },
-    createdAt: {
-        type: Date,
-        default: Date.now
-    },
-    comments: [
+  fileUrl: {
+    type: String,
+    required: "File Url is required",
+  },
+  title: {
+    type: String,
+    required: "Title is required",
+  },
+  description: String,
+  views: {
+    type: Number,
+    default: 0,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+  comments: [
     {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Comment"
-    }],
-    
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Comment",
+    },
+  ],
 });
 
 const model = mongoose.model("Video", VideoSchema);
