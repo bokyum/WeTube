@@ -117,6 +117,7 @@ npm install helmet
 
 - mongodb 장점: documents 수를 줄여줌
 
+- show dbs
 - user we-tube
 - show collections
 - db.videos.remove({})
@@ -127,3 +128,11 @@ npm install eslint -D
 npm install eslint-plugin-prettier -D
 npm install eslint-config-prettier -D
 npm install prettier -D
+
+# passport
+
+"passport"
+"passport-local"
+"passport-local-mongoose"
+"express-session"
+"connect-mongo"
