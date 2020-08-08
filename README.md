@@ -136,3 +136,12 @@ npm install prettier -D
 "passport-local-mongoose"
 "express-session"
 "connect-mongo"
+
+-> github website(auth)
+github website(auth) -> /auth/github/callback
+githubLoginCallback (profile)
+=> cb(null, profile)
+
+cookie = makeCookie(user)
+savedCookie = savedCookie(cookie)
+sendCookie = sendCookie(savedCookie)

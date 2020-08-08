@@ -36,14 +36,14 @@ app.use(
     secret: process.env.COOKIE_SECRET,
     resave: true,
     saveUninitialized: false,
-    store: new CookieStore({ mongooseConnection: mongoose.connection }),
+    store: new CookieStore({ mongooseConnection: mongoose.connection }), //메모리에 저장이 아닌 DB에 저장하도록 해줌
   })
 );
 
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(localsMiddleware);
+app.use(localsMiddleware); // local variable을 넘겨줌
 
 app.use(routes.home, globalRouter);
 app.use(routes.videos, videoRouter);

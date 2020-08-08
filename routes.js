@@ -12,6 +12,7 @@ const USER_DETAIL = "/:id";
 const EDIT_PROFILE = "/edit-profile";
 const CHANGE_PASSWORD = "/change-password";
 
+const ME = "/me";
 // Videos
 // 만약 constollers에서 어떤 data를 가지고 있다는 것을 표현하고 싶다면 : 과 이름을 넣으면 됌
 const VIDEOS = "/videos";
@@ -19,6 +20,9 @@ const UPLOAD = "/upload";
 const VIDEO_DETAIL = "/:id";
 const EDIT_VIDEO = "/:id/edit";
 const DELETE_VIDEO = "/:id/delete";
+
+const GITHUB = "/auth/github";
+const GITHUB_CALLBACK = "/auth/github/callback";
 
 const routes = {
   home: HOME,
@@ -59,6 +63,9 @@ const routes = {
       return DELETE_VIDEO;
     }
   },
+  gitHub: GITHUB,
+  githubCallback: GITHUB_CALLBACK,
+  me: ME,
 };
 
 export default routes;
