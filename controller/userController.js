@@ -10,6 +10,7 @@ export const postJoin = async (req, res, next) => {
     body: { name, email, password, password2 },
   } = req;
   if (password !== password2) {
+    //req.flash("error", "Passwords don't match");
     res.status(400);
     res.render("join", { pageTitle: "Join" });
   } else {
@@ -31,6 +32,7 @@ export const postJoin = async (req, res, next) => {
 export const getLogin = (req, res) => {
   res.render("login", { pageTitle: "Login" });
 };
+
 export const postLogin = passport.authenticate("local", {
   failureRedirect: routes.login,
   successRedirect: routes.home,
@@ -109,9 +111,27 @@ export const userDetail = async (req, res) => {
   }
 };
 
-export const editProfile = (req, res) => {
+export const getEditProfile = (req, res) => {
   res.render("editProfile", { pageTitle: "Edit Profile" });
 };
+
+export const postEditProfile = async (req, res) => {
+  const {
+    body: { name, email },
+    file,
+  } = req;
+  try {
+    await User.findByIdAndUpdate(req.user.id, {
+      name,
+      email,
+      avatarUrl: file ? file.path : req.user.avatarUrl,
+    });
+    res.redirect(routes.me);
+  } catch (error) {
+    res.render("editProfile", { pageTitle: "Edit Profile" });
+  }
+};
+
 export const changePassword = (req, res) => {
   res.render("changePassword", { pageTitle: "Change Password" });
 };
