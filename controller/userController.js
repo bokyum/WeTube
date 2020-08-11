@@ -1,6 +1,7 @@
 import passport from "passport";
 import routes from "../routes";
 import User from "../models/User";
+import Video from "../models/Video";
 import e from "express";
 
 export const getJoin = (req, res) => {
@@ -110,7 +111,9 @@ export const userDetail = async (req, res) => {
     params: { id },
   } = req;
   try {
-    const user = await User.findById(id);
+    //const video = await Video.findById(req.user.id).populate("creator");
+    const user = await User.findById(id).populate("videos");
+    console.log(user);
     res.render("userDetail", { pageTitle: "User Detail", user });
   } catch (error) {
     console.log("haha");
