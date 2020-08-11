@@ -1,11 +1,8 @@
 import passport from "passport";
 import GithubStrategy from "passport-github";
-import FacebookStrategy from "passport-facebook";
+//import FacebookStrategy from "passport-facebook";
 import User from "./models/User";
-import {
-  githubLoginCallback,
-  facebookLoginCallback,
-} from "./controller/userController";
+import { githubLoginCallback } from "./controller/userController";
 import routes from "./routes";
 
 passport.use(User.createStrategy());
@@ -20,6 +17,7 @@ passport.use(
     githubLoginCallback
   )
 );
+/*
 passport.use(
   new FacebookStrategy(
     {
@@ -30,6 +28,6 @@ passport.use(
     facebookLoginCallback
   )
 );
-
+*/
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());

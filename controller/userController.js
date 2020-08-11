@@ -70,7 +70,7 @@ export const githubLoginCallback = async (
 export const postGithubLogIn = (req, res) => {
   res.redirect(routes.home);
 };
-
+/*
 export const facebookLogin = passport.authenticate("facebook");
 
 export const facebookLoginCallback = (
@@ -85,7 +85,7 @@ export const facebookLoginCallback = (
 export const postFacebookLogin = (req, res) => {
   res.redirect(routes.home);
 };
-
+*/
 export const logout = (req, res) => {
   //To Do: Log out Process
   req.logout();
