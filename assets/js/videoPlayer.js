@@ -7,6 +7,13 @@ const currentTime = document.getElementById("currentTime");
 const totalTime = document.getElementById("totalTime");
 const volumeRange = document.getElementById("jsVolume");
 
+const registerView = () => {
+  const videoId = window.location.href.split("/videos/")[1];
+  fetch(`/api/${videoId}/view`, {
+    method: "POST",
+  });
+};
+
 function handlePlayClick() {
   if (videoPlayer.paused) {
     videoPlayer.play();
@@ -92,6 +99,7 @@ function setTotalTime() {
 }
 
 function handleEnded() {
+  //registerView(); // 시청이 끝나면 view 수를 1 증가시킴
   videoPlayer.currentTime = 0;
   playBtn.innerHTML = '<i class="fas fa-play"></i>';
 }
@@ -111,6 +119,7 @@ function handleDrag(event) {
 }
 
 function init() {
+  registerView(); // 시청을 시작하면 view 수를 1 증가 시킴
   videoPlayer.volume = 0.5;
   playBtn.addEventListener("click", handlePlayClick);
   volumeBtn.addEventListener("click", handleVolumeClick);

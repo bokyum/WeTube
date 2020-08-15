@@ -145,3 +145,17 @@ githubLoginCallback (profile)
 cookie = makeCookie(user)
 savedCookie = savedCookie(cookie)
 sendCookie = sendCookie(savedCookie)
+
+## axios
+
+- http request를 깔끔하게 만들어줌
+- Axios uses fetch on the inside, axios is just a layer on top of fetch, you can use axios if you want :)
+
+## get, post
+
+- database를 변경할 필요가 없다면 get
+- 변경해야 한다면 post
+
+## url 분리방법
+
+- window.location.href.split("");

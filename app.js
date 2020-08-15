@@ -11,6 +11,7 @@ import MongoStore from "connect-mongo";
 import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
 import globalRouter from "./routers/globalRouter";
+import apiRouter from "./routers/apiRouter";
 import routes from "./routes";
 import { localsMiddleware } from "./middlewares";
 
@@ -46,8 +47,9 @@ app.use(passport.session());
 app.use(localsMiddleware); // local variable을 넘겨줌
 
 app.use(routes.home, globalRouter);
-app.use(routes.videos, videoRouter);
 app.use(routes.users, userRouter);
+app.use(routes.videos, videoRouter);
+app.use(routes.api, apiRouter);
 //app.use(routes.home, videoRouter);
 
 export default app;
